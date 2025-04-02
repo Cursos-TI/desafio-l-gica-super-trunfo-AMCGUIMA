@@ -10,36 +10,25 @@ int main() {
     // Você pode utilizar o código do primeiro desafio
 
 
-   // Variaveis das Cartas 1 e 2 criado para armazenar os dados inputados pelo teclado:
-   char estado1, estado2;   
-   char codigo1[4], codigo2[4]; 
-   char nomeCidade1[20], nomeCidade2[20];
-   unsigned long int populacao1, populacao2; //Alterado para unsigned long int para desensover o nivel Mestre
-   float area1, area2;
-   float pib1, pib2;
-   int pontosTuristicos1, pontosTuristicos2;
+    // Variaveis das Cartas 1 e 2 criado para armazenar os dados inputados pelo teclado:
+    char estado1, estado2;   
+    char codigo1[4], codigo2[4]; 
+    char nomeCidade1[20], nomeCidade2[20];
+    unsigned long int populacao1, populacao2; //Alterado para unsigned long int para desensover o nivel Mestre
+    float area1, area2;
+    float pib1, pib2;
+    int pontosTuristicos1, pontosTuristicos2;
 
-   // Variaveis para calculo do PIB per capita e desindade populacional (Nivel Aventureiro)
-   float desidadePopulacional1, desidadePopulacional2;
-   float pibPercapita1, pibPercapita2;
+    // Variaveis para calculo do PIB per capita e desindade populacional (Nivel Aventureiro)
+    float desidadePopulacional1, desidadePopulacional2;
+    float pibPercapita1, pibPercapita2;
 
-   //Variavel Super Poder -- Nivel Mestre
-   float superPoder1, superPoder2;
-   char Cartas[] ={'2', '1'}; // Variavel auxilar para armazenar o numero das cartas para ser exibido no resutado da comparação
-   int comparaPopulacao,  comparaArea, comparaPIB, comparaDensidadePopulacional; //Variaveis para armazenar o resultado das comparações
-   int comparaPontosTuristicos, comparaPibpercapita, comparaSuperpoder;  //Variaveis para armazenar o resultado das comparações
+    //Variavel Super Poder -- Nivel Mestre
+    float superPoder1, superPoder2;
+    char Cartas[] ={'2', '1'}; // Variavel auxilar para armazenar o numero das cartas para ser exibido no resutado da comparação
+    int comparaPopulacao,  comparaArea, comparaPIB, comparaDensidadePopulacional; //Variaveis para armazenar o resultado das comparações
+    int comparaPontosTuristicos, comparaPibpercapita, comparaSuperpoder;  //Variaveis para armazenar o resultado das comparações
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
-
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
 
 
     // Coleta de Dados da carta 1 via teclado e função scanf.
@@ -93,77 +82,23 @@ int main() {
     printf("\nInforme a quantidade de pontos turiscos na cidade. \nNumero de pontos turisticos: ");
     scanf(" %d", &pontosTuristicos2);
 
-    
-    printf("\n\n   Dados das Cartas 1 e 2.");
-    // Impressao dos dados da carta 1
-    printf("\n\nCarta 1:");
-    printf("\nEstado: %c", estado1); 
-    printf("\nCodigo: %s", codigo1); 
-    printf("\nNome da Cidade: %s", nomeCidade1);
-    printf("\nPopulacao: %ld", populacao1);
-    printf("\nArea: %.2f km2", area1);
-    printf("\nPIB: %.2f bilhoes de reais", pib1);
-    printf("\nNumero de Pontos Turisticos: %d", pontosTuristicos1);
-
-    desidadePopulacional1 = (float)populacao1 / area1;  //Caculo da densidade populacioal da Carta 1
-
-    printf("\nDensidade Populacional: %.2f hab/km2", desidadePopulacional1); 
+    desidadePopulacional1 = (float)populacao1 / area1;  //Caculo da densidade populacional da Carta 1 
 
     pibPercapita1 = pib1 / (float)populacao1; //Calculo do PIB per Capita da Carta 1
-
-    printf("\nPIB per Capita: %.2f reais", pibPercapita1);
-
+ 
     //Calculando Super Poder da Carta 1
-
     superPoder1 = ((float)populacao1 + area1 + pib1 + (float)pontosTuristicos1 + pibPercapita1);
     superPoder1 += (1/desidadePopulacional1);
 
-    printf("\nSuper Poder: %.2f ", superPoder1);
 
-    // Impressao dos dados da carta 2
-    printf("\n\nCarta 2:");
-    printf("\nEstado: %c", estado2);
-    printf("\nCodigo: %s", codigo2);
-    printf("\nNome da Cidade: %s", nomeCidade2);
-    printf("\nPopulacao: %ld", populacao2);
-    printf("\nArea: %.2f km2", area2); 
-    printf("\nPIB: %.2f bilhoes de reais", pib2);
-    printf("\nNumero de Pontos Turisticos: %d", pontosTuristicos2);
 
-    desidadePopulacional2 = (float)populacao2 / area2;  //Caculo da densidade populacioal da Carta 2
-
-    printf("\nDensidade Populacional: %.2f hab/km2", desidadePopulacional2); 
-
+    desidadePopulacional2 = (float)populacao2 / area2;  //Caculo da densidade populacional da Carta 2
+    
     pibPercapita2 = pib2 / (float)populacao2; //Calculo do PIB per Capita da Carta 2
 
-    printf("\nPIB per Capita: %.2f reais", pibPercapita2);
-
-        //Calculando Super Poder da Carta 2
-
+    //Calculando Super Poder da Carta 2
     superPoder2 = ((float)populacao2 + area2 + pib2 + (float)pontosTuristicos2 + pibPercapita2);
     superPoder2 += (1/desidadePopulacional2);
-
-    printf("\nSuper Poder: %.2f ", superPoder2);
-
-
-
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-
+    
     return 0;
 }
