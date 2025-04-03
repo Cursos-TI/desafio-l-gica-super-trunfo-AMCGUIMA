@@ -25,10 +25,14 @@ int main() {
 
     //Variavel Super Poder -- Nivel Mestre
     float superPoder1, superPoder2;
+
     char Cartas[] ={'2', '1'}; // Variavel auxilar para armazenar o numero das cartas para ser exibido no resutado da comparação
     int comparaPopulacao,  comparaArea, comparaPIB, comparaDensidadePopulacional; //Variaveis para armazenar o resultado das comparações
     int comparaPontosTuristicos, comparaPibpercapita, comparaSuperpoder;  //Variaveis para armazenar o resultado das comparações
 
+    int atributo1, atributo2; // Variavel auxiliar para dinamica do menu
+
+/*
 
     printf("     Preencha os dados da Carta 1:\n\n"); 
 
@@ -129,6 +133,120 @@ int main() {
     superPoder2 += (1/desidadePopulacional2);
 
     printf("\nSuper Poder: %.2f ", superPoder2);
+*/
+    //----------Inicio do Menu dinamico-----------//
+
+    //atributo1 = 1;
+   // atributo2 = 2;
+
+
+    printf("\n\n\nEscolha dois atributos para iniciar. \n");
+    printf("\n1 - Populacao");
+    printf("\n2 - Area");
+    printf("\n3 - PIB");
+    printf("\n4 - Pontos Turisticos");
+    printf("\n5 - Densidade Populacional");
+    printf("\n6 - PIB per Capita");
+    printf("\n7 - Super Poder");
+
+    printf("\n\n  Atributo 1: ");
+    
+    if(scanf("%d", &atributo1) == 1){
+        if(atributo1 < 1 || atributo1 > 7){
+            printf("\n\n   Atributo incorreto. Inicie novamente.");
+            return 0;
+        } 
+    } 
+
+    printf("\n\nEscolha o segundo atributo.");
+
+    switch(atributo1){
+        case 1:
+             printf("\n1 - Area");
+             printf("\n2 - PIB");
+             printf("\n3 - Pontos Turisticos");
+             printf("\n4 - Densidade Populacional");
+             printf("\n5 - PIB per Capita");
+             printf("\n6 - Super Poder");
+             break;
+        case 2:
+             printf("\n1 - Populacao");
+             printf("\n2 - PIB");
+             printf("\n3 - Pontos Turisticos");
+             printf("\n4 - Densidade Populacional");
+             printf("\n5 - PIB per Capita");
+             printf("\n6 - Super Poder");
+             break;
+        case 3:
+             printf("\n1 - Populacao");
+             printf("\n2 - Area");
+             printf("\n3 - Pontos Turisticos");
+             printf("\n4 - Densidade Populacional");
+             printf("\n5 - PIB per Capita");
+             printf("\n6 - Super Poder");
+             break;
+        case 4:
+             printf("\n1 - Populacao");
+             printf("\n2 - Area");
+             printf("\n3 - PIB");
+             printf("\n4 - Densidade Populacional");
+             printf("\n5 - PIB per Capita");
+             printf("\n6 - Super Poder");
+             break;
+        case 5:
+             printf("\n1 - Populacao");
+             printf("\n2 - Area");
+             printf("\n3 - PIB");
+             printf("\n4 - Pontos Turisticos");
+             printf("\n5 - PIB per Capita");
+             printf("\n6 - Super Poder");
+             break;
+        case 6:
+             printf("\n1 - Populacao");
+             printf("\n2 - Area");
+             printf("\n3 - PIB");
+             printf("\n4 - Pontos Turisticos");
+             printf("\n5 - Densidade Populacional");
+             printf("\n6 - Super Poder");
+             break;
+        case 7:
+             printf("\n1 - Populacao");
+             printf("\n2 - Area");
+             printf("\n3 - PIB");
+             printf("\n4 - Pontos Turisticos");
+             printf("\n5 - Densidade Populacional");
+             printf("\n6 - PIB per Capita");
+             break;
+        default:
+             printf("\n\nOpcao invalida.");
+             return 0;
+
+    }
+
+    printf("\n\n  Atributo 2: ");
+    
+    if(scanf("%d", &atributo2) == 1){
+        if(atributo2 < 1 || atributo2 > 6){
+            printf("\n\n   Atributo incorreto. Inicie novamente.");
+            return 0;
+            
+        } else if(atributo2 >= atributo1){ atributo2 += 1; }
+            
+    } 
+
+
+
+    printf("\n\n ATRIBUTOS ESCOLHIDOS: ATR1: %d -- ATR2: %d ", atributo1, atributo2);
+
+
+
+
+
+
+
+
+
+
 
 
 
