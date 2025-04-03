@@ -158,6 +158,7 @@ int main() {
         } 
     } 
 
+
     printf("\n\nEscolha o segundo atributo.");
 
     switch(atributo1){
@@ -229,14 +230,48 @@ int main() {
         if(atributo2 < 1 || atributo2 > 6){
             printf("\n\n   Atributo incorreto. Inicie novamente.");
             return 0;
-            
+
         } else if(atributo2 >= atributo1){ atributo2 += 1; }
             
     } 
 
+// Exibindo o resultado das comparações e o vencedor usando varivel char criada para armazenar o numero da carta:
 
+strcpy(nomeCidade1, "TIETE");
+strcpy(nomeCidade2, "TATUI");
+populacao1 =23332;
+populacao2 = 234234;
+area1 = 23424.23;
+area2 = 23424.88;
+pib1 = 2345.88;
+pib2 =23234.99;
+pontosTuristicos1 = 34;
+pontosTuristicos2 =55;
 
-    printf("\n\n ATRIBUTOS ESCOLHIDOS: ATR1: %d -- ATR2: %d ", atributo1, atributo2);
+    printf("\n\nRESULTADO DA COMPARACAO\n\n");
+
+    printf("           Carta 1      Carta 2 \n");
+    printf("   Cidade: %s        %s  ",nomeCidade1, nomeCidade2);
+    
+
+    switch (atributo1)
+    {
+    case 1:
+    printf("Populacao: %ld\t%ld", populacao1, populacao2);
+        comparaPopulacao = populacao1 > populacao2 ? 1 : 0;
+        break;
+    case 2:
+        printf("\n Area km2: %.2f\t%.2f", area1, area2);
+        comparaArea = area1 > area2 ? 1 : 0;
+        break;
+    case 3:
+    printf("\n      PIB: %.2f\t%.2f", pib1, pib2);
+        comparaPIB = pib1 > pib2 ? 1 : 0;
+        break;
+    case 4:
+    printf("\nPontos Turisticos: %d\t%d", pontosTuristicos1, pontosTuristicos2);
+    
+    }
 
 
 
