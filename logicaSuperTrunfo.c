@@ -139,7 +139,7 @@ int main() {
     //atributo1 = 1;
    // atributo2 = 2;
 
-
+/*
     printf("\n\n\nEscolha dois atributos para iniciar. \n");
     printf("\n1 - Populacao");
     printf("\n2 - Area");
@@ -234,54 +234,76 @@ int main() {
         } else if(atributo2 >= atributo1){ atributo2 += 1; }
             
     } 
-
+*/
 // Exibindo o resultado das comparações e o vencedor usando varivel char criada para armazenar o numero da carta:
+atributo1 =4;
+atributo2 = 2;
 
 strcpy(nomeCidade1, "TIETE");
 strcpy(nomeCidade2, "TATUI");
-populacao1 =23332;
-populacao2 = 234234;
-area1 = 23424.23;
-area2 = 23424.88;
-pib1 = 2345.88;
-pib2 =23234.99;
+populacao1 =37663;
+populacao2 = 123940;
+area1 = 404.39;
+area2 = 2324.88;
+pib1 = 59908.52;
+pib2 =5100000.00;
 pontosTuristicos1 = 34;
 pontosTuristicos2 =55;
+desidadePopulacional1 = (float)populacao1 / area1;  //Caculo da densidade populacioal da Carta 1
+desidadePopulacional2 = (float)populacao2 / area2;  //Caculo da densidade populacioal da Carta 2
+pibPercapita1 = pib1 / (float)populacao1; //Calculo do PIB per Capita da Carta 1
+pibPercapita2 = pib2 / (float)populacao2; //Calculo do PIB per Capita da Carta 2
+
+superPoder1 = ((float)populacao1 + area1 + pib1 + (float)pontosTuristicos1 + pibPercapita1);
+superPoder1 += (1/desidadePopulacional1);
+superPoder2 = ((float)populacao2 + area2 + pib2 + (float)pontosTuristicos2 + pibPercapita2);
+superPoder2 += (1/desidadePopulacional2);
 
     printf("\n\nRESULTADO DA COMPARACAO\n\n");
 
-    printf("           Carta 1      Carta 2 \n");
-    printf("   Cidade: %s        %s  ",nomeCidade1, nomeCidade2);
-    
+    printf("\t\t        Carta 1 \tCarta 2 \n");
+    printf("                Cidade: %s \t |\t%s  ",nomeCidade1, nomeCidade2);  
+    printf("\n             Populacao: %ld \t |\t%ld", populacao1, populacao2);
+    printf("\n              Area km2: %.2f \t |\t%.2f", area1, area2);
+    printf("\n                   PIB: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f", pib1, pib2);
+    printf("\n     Pontos Turisticos: %d \t |\t%d", pontosTuristicos1, pontosTuristicos2);
+    printf("\nDensidade Populacional: %.2f \t |\t%.2f",desidadePopulacional1, desidadePopulacional2);
+    printf("\n        PIB per Capita: %.2f \t |\t%.2f",pibPercapita1, pibPercapita2);
+    printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",superPoder1, superPoder2);
+
 
     switch (atributo1)
     {
     case 1:
-    printf("Populacao: %ld\t%ld", populacao1, populacao2);
+        printf("\n             Populacao: %ld \t |\t%ld", populacao1, populacao2);
         comparaPopulacao = populacao1 > populacao2 ? 1 : 0;
         break;
     case 2:
-        printf("\n Area km2: %.2f\t%.2f", area1, area2);
+        printf("\n              Area km2: %.2f \t |\t%.2f", area1, area2);
         comparaArea = area1 > area2 ? 1 : 0;
         break;
     case 3:
-    printf("\n      PIB: %.2f\t%.2f", pib1, pib2);
+        printf("\n                   PIB: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f", pib1, pib2);
         comparaPIB = pib1 > pib2 ? 1 : 0;
         break;
     case 4:
-    printf("\nPontos Turisticos: %d\t%d", pontosTuristicos1, pontosTuristicos2);
+        printf("\n     Pontos Turisticos: %d \t |\t%d", pontosTuristicos1, pontosTuristicos2);
+        comparaPontosTuristicos = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+        break;
+    case 5:
+        printf("\nDensidade Populacional: %.2f \t |\t%.2f",desidadePopulacional1, desidadePopulacional2);
+        comparaDensidadePopulacional = desidadePopulacional1 < desidadePopulacional2 ? 1 : 0;
+        break;
+    case 6:
+        printf("\n        PIB per Capita: %.2f \t |\t%.2f",pibPercapita1, pibPercapita2);
+        comparaPibpercapita = pibPercapita1 > pibPercapita2 ? 1 : 0;
+        break;
+    case 7:
+        printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",superPoder1, superPoder2);  
+        comparaSuperpoder = superPoder1 > superPoder2 ?1 : 0;
+        break;
     
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
