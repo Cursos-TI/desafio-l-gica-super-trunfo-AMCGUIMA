@@ -27,9 +27,8 @@ int main() {
     float superPoder1, superPoder2;
 
     char Cartas[] ={'2', '1'}; // Variavel auxilar para armazenar o numero das cartas para ser exibido no resutado da comparação
-    int comparaPopulacao,  comparaArea, comparaPIB, comparaDensidadePopulacional; //Variaveis para armazenar o resultado das comparações
-    int comparaPontosTuristicos, comparaPibpercapita, comparaSuperpoder;  //Variaveis para armazenar o resultado das comparações
-    int resultado1, resultado2;    
+    int resultado1, resultado2; 
+    float somaAtributos1, somaAtributos2;   
     
     int atributo1, atributo2; // Variavel auxiliar para dinamica do menu
 
@@ -142,14 +141,14 @@ int main() {
     
     strcpy(nomeCidade1, "TIETE");
     strcpy(nomeCidade2, "TATUI");
-    populacao1 =37663;
-    populacao2 = 123940;
+    populacao1 =376;
+    populacao2 = 376;
     area1 = 404.39;
     area2 = 2324.88;
     pib1 = 59908.52;
     pib2 =5100000.00;
     pontosTuristicos1 = 34;
-    pontosTuristicos2 =55;
+    pontosTuristicos2 = 34;
     desidadePopulacional1 = (float)populacao1 / area1;  //Caculo da densidade populacioal da Carta 1
     desidadePopulacional2 = (float)populacao2 / area2;  //Caculo da densidade populacioal da Carta 2
     pibPercapita1 = pib1 / (float)populacao1; //Calculo do PIB per Capita da Carta 1
@@ -159,6 +158,7 @@ int main() {
     superPoder1 += (1/desidadePopulacional1);
     superPoder2 = ((float)populacao2 + area2 + pib2 + (float)pontosTuristicos2 + pibPercapita2);
     superPoder2 += (1/desidadePopulacional2);
+
     
 
 
@@ -191,7 +191,14 @@ int main() {
              printf("\n4 - Densidade Populacional");
              printf("\n5 - PIB per Capita");
              printf("\n6 - Super Poder");
-             resultado1 = populacao1 > populacao2 ? 1 : 0;
+             if(populacao1 == populacao2)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+
+             }else resultado1 = populacao1 > populacao2 ? 1 : 0;
+
+             somaAtributos1 = (float)populacao1;
+             somaAtributos2 = (float)populacao2;
              break;
         case 2:
              printf("\n1 - Populacao");
@@ -200,7 +207,14 @@ int main() {
              printf("\n4 - Densidade Populacional");
              printf("\n5 - PIB per Capita");
              printf("\n6 - Super Poder");
-             resultado1 = area1 > area2 ? 1 : 0;
+             if(area1 == area1)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+                
+             }else resultado1 = area1 > area2 ? 1 : 0;
+
+             somaAtributos1 = area1;
+             somaAtributos2 = area2;
              break;
         case 3:
              printf("\n1 - Populacao");
@@ -209,7 +223,13 @@ int main() {
              printf("\n4 - Densidade Populacional");
              printf("\n5 - PIB per Capita");
              printf("\n6 - Super Poder");
-             resultado1 = pib1 > pib2 ? 1 : 0;
+             if(pib1 == pib2)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+                
+             }else resultado1 = pib1 > pib2 ? 1 : 0;
+             somaAtributos1 = pib1;
+             somaAtributos2 = pib2;
              break;
         case 4:
              printf("\n1 - Populacao");
@@ -218,7 +238,13 @@ int main() {
              printf("\n4 - Densidade Populacional");
              printf("\n5 - PIB per Capita");
              printf("\n6 - Super Poder");
-             resultado1 = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+             if(pontosTuristicos1 == pontosTuristicos2)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+                
+             }else resultado1 = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+             somaAtributos1 = (float)pontosTuristicos1;
+             somaAtributos2 = (float)pontosTuristicos2;
              break;
         case 5:
              printf("\n1 - Populacao");
@@ -227,7 +253,14 @@ int main() {
              printf("\n4 - Pontos Turisticos");
              printf("\n5 - PIB per Capita");
              printf("\n6 - Super Poder");
-             resultado1 = desidadePopulacional1 < desidadePopulacional2 ? 1 : 0;
+             if(desidadePopulacional1 == desidadePopulacional2)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+                
+             }else resultado1 = desidadePopulacional1 < desidadePopulacional2 ? 1 : 0;
+
+             somaAtributos1 = desidadePopulacional1;
+             somaAtributos2 = desidadePopulacional2;
              break;
         case 6:
              printf("\n1 - Populacao");
@@ -236,7 +269,14 @@ int main() {
              printf("\n4 - Pontos Turisticos");
              printf("\n5 - Densidade Populacional");
              printf("\n6 - Super Poder");
-             resultado1 = pibPercapita1 > pibPercapita2 ? 1 : 0;
+             if(pibPercapita1 == pibPercapita2)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+                
+             }else resultado1 = pibPercapita1 > pibPercapita2 ? 1 : 0;
+
+             somaAtributos1 = pibPercapita1;
+             somaAtributos2 = pibPercapita2;
              break;
         case 7:
              printf("\n1 - Populacao");
@@ -245,7 +285,14 @@ int main() {
              printf("\n4 - Pontos Turisticos");
              printf("\n5 - Densidade Populacional");
              printf("\n6 - PIB per Capita");
-             resultado1 = superPoder1 > superPoder2 ? 1 : 0;
+             if(superPoder1 == superPoder2)
+             {
+                resultado1 = 2; //VALOR PARA EMPATE 
+                
+             }else resultado1 = superPoder1 > superPoder2 ? 1 : 0;
+
+             somaAtributos1 = superPoder1;
+             somaAtributos2 = superPoder2;
              break;
         default:
              printf("\n\nOpcao invalida.");
@@ -268,25 +315,59 @@ int main() {
                     switch(atributo2)
                     {
                         case 1:
-                            resultado2 = populacao1 > populacao2 ? 1 : 0;
+                            if(populacao1 == populacao2)
+                            {
+                                resultado2 = 2; //VALOR PARA EMPATE 
+                
+                            }else resultado2 = populacao1 > populacao2 ? 1 : 0;
+
+                            somaAtributos1 += populacao1;
+                            somaAtributos2 += populacao2;
                             break;
                         case 2:
-                            resultado2 = area1 > area2 ? 1 : 0;
+                            if(area1 == area2)
+                            {
+                                resultado2 = 2; //VALOR PARA EMPATE 
+            
+                            }else resultado2 = area1 > area2 ? 1 : 0;
+
+                            somaAtributos1 += area1;
+                            somaAtributos2 += area2;
                             break;
                         case 3:
-                            resultado2 = pib1 > pib2 ? 1 : 0;
+                            if(pib1 == pib2)
+                            {
+                                resultado2 = 2; //VALOR PARA EMPATE 
+            
+                            }else resultado2 = pib1 > pib2 ? 1 : 0;
+
+                            somaAtributos1 += pib1;
+                            somaAtributos2 += pib2;
                             break;
                         case 4:
-                            resultado2 = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+                            if(pontosTuristicos1 == pontosTuristicos2)
+                            {
+                                resultado2 = 2; //VALOR PARA EMPATE 
+            
+                            }else resultado2 = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+
+                            somaAtributos1 += (float)pontosTuristicos1;
+                            somaAtributos2 += (float)pontosTuristicos2;
                             break;
                         case 5:
                             resultado2 = desidadePopulacional1 < desidadePopulacional2 ? 1 : 0;
+                            somaAtributos1 += desidadePopulacional1;
+                            somaAtributos2 += desidadePopulacional2;
                             break;
                         case 6:
                             resultado2 = pibPercapita1 > pibPercapita2 ? 1 : 0;
+                            somaAtributos1 += pibPercapita1;
+                            somaAtributos2 += pibPercapita2;
                             break;
                         case 7:
                             resultado2 = superPoder1 > superPoder2 ?1 : 0;
+                            somaAtributos1 += superPoder1;
+                            somaAtributos2 += superPoder2;
                             break;
 
                     }
@@ -295,58 +376,149 @@ int main() {
     } 
 
 
-    printf("\n\n resultado 1: %d ", resultado1);
-    printf("\n\n resultado 2: %d ", resultado2);
-/*
-// Exibindo o resultado das comparações e o vencedor usando varivel char criada para armazenar o numero da carta:
+// Exibindo o resultado das comparações e o vencedor.
 
-    printf("\n\nRESULTADO DA COMPARACAO\n\n");
+    printf("\n\nRESULTADO DO JOGO\n\n");
 
     printf("\t\t        Carta 1 \tCarta 2 \n");
-   
-    printf("                Cidade: %s \t |\t%s  ",nomeCidade1, nomeCidade2);  
-    printf("\n             Populacao: %ld \t |\t%ld", populacao1, populacao2);
-    printf("\n              Area km2: %.2f \t |\t%.2f", area1, area2);
-    printf("\n                   PIB: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f", pib1, pib2);
-    printf("\n     Pontos Turisticos: %d \t |\t%d", pontosTuristicos1, pontosTuristicos2);
-    printf("\nDensidade Populacional: %.2f \t |\t%.2f",desidadePopulacional1, desidadePopulacional2);
-    printf("\n        PIB per Capita: %.2f \t |\t%.2f",pibPercapita1, pibPercapita2);
-    printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",superPoder1, superPoder2);
-
+    printf("                Cidade: %s \t |\t%s  ",nomeCidade1, nomeCidade2); 
 
     switch (atributo1)
     {
     case 1:
         printf("\n             Populacao: %ld \t |\t%ld", populacao1, populacao2);
-        comparaPopulacao = populacao1 > populacao2 ? 1 : 0;
         break;
     case 2:
         printf("\n              Area km2: %.2f \t |\t%.2f", area1, area2);
-        comparaArea = area1 > area2 ? 1 : 0;
         break;
     case 3:
         printf("\n                   PIB: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f", pib1, pib2);
-        comparaPIB = pib1 > pib2 ? 1 : 0;
         break;
     case 4:
         printf("\n     Pontos Turisticos: %d \t |\t%d", pontosTuristicos1, pontosTuristicos2);
-        comparaPontosTuristicos = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
         break;
     case 5:
         printf("\nDensidade Populacional: %.2f \t |\t%.2f",desidadePopulacional1, desidadePopulacional2);
-        comparaDensidadePopulacional = desidadePopulacional1 < desidadePopulacional2 ? 1 : 0;
         break;
     case 6:
         printf("\n        PIB per Capita: %.2f \t |\t%.2f",pibPercapita1, pibPercapita2);
-        comparaPibpercapita = pibPercapita1 > pibPercapita2 ? 1 : 0;
         break;
     case 7:
         printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",superPoder1, superPoder2);  
-        comparaSuperpoder = superPoder1 > superPoder2 ?1 : 0;
         break;
     
     }
 
+    printf("\n    Atributo1 vencedor: ");
+    if(resultado2)
+    { 
+        printf("\t  X \t |");
+    }
+    else{
+            printf("    \t |\t X  ");
+    }
+
+    switch (atributo2)
+    {
+    case 1:
+        printf("\n             Populacao: %ld \t |\t%ld", populacao1, populacao2);
+        break;
+    case 2:
+        printf("\n              Area km2: %.2f \t |\t%.2f", area1, area2);
+        break;
+    case 3:
+        printf("\n                   PIB: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f", pib1, pib2);
+        break;
+    case 4:
+        printf("\n     Pontos Turisticos: %d \t |\t%d", pontosTuristicos1, pontosTuristicos2);
+        break;
+    case 5:
+        printf("\nDensidade Populacional: %.2f \t |\t%.2f",desidadePopulacional1, desidadePopulacional2);
+        break;
+    case 6:
+        printf("\n        PIB per Capita: %.2f \t |\t%.2f",pibPercapita1, pibPercapita2);
+        break;
+    case 7:
+        printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",superPoder1, superPoder2);  
+        break;
+    
+    }
+
+    printf("\n    Atributo2 vencedor: ");
+    if(resultado2)
+    { 
+        printf("\t  X \t |");
+    }
+    else{
+            printf("    \t |\t X  ");
+    }
+
+    printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",somaAtributos1, somaAtributos2);
+
+    printf("\n*************************************************************");
+    printf("\n*                                                           *");
+
+    if(somaAtributos1 > somaAtributos2)
+    {
+      printf("\n*\t Carta 1 - Cidade:  %s Venceu a Partida!!\t    *", nomeCidade1);
+    }else if(somaAtributos1 == somaAtributos2 )
+            {
+                printf("\n*              Houve empate na Partida!!                    *");
+
+            }else {
+                     printf("\n*\t Carta 2 - Cidade:  %s Venceu a Partida!!\t    *", nomeCidade2);
+
+                   }
+
+    printf("\n*                                                           *");
+    printf("\n*************************************************************");
+
+
+
+/*
+
+somaAtributos1 = 656794.99;
+somaAtributos2 = 50000.99;
+
+    printf("\n\nRESULTADO DO JOGO\n\n");
+
+    printf("\t\t        Carta 1 \tCarta 2 \n");
+    printf("                Cidade: %s \t |\t%s  ",nomeCidade1, nomeCidade2);  
+   // printf("\n             Populacao: %ld \t |\t%ld", populacao1, populacao2);
+  //  printf("\n              Area km2: %.2f \t |\t%.2f", area1, area2);
+  //  printf("\n                   PIB: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f", pib1, pib2);
+    printf("\n     Pontos Turisticos: %d \t |\t%d", pontosTuristicos1, pontosTuristicos2);
+    printf("\n   Atributo 1 vencedor:");
+    if(resultado2)
+    { 
+        printf("\t  X \t |");
+    }
+    else{
+            printf("    \t |\t X  ");
+    }
+  //  printf("\nDensidade Populacional: %.2f \t |\t%.2f",desidadePopulacional1, desidadePopulacional2);
+  //  printf("\n        PIB per Capita: %.2f \t |\t%.2f",pibPercapita1, pibPercapita2);
+  //  printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",superPoder1, superPoder2);
+
+      printf("\n           Super Poder: %.2f \t \b\b\b\b\b\b\b\b|\t%.2f",somaAtributos1, somaAtributos2);
+
+      printf("\n*************************************************************");
+      printf("\n*                                                           *");
+      if(somaAtributos1 > somaAtributos2)
+      {
+      printf("\n*\t Carta 1 - Cidade:  %s Venceu a Partida!!\t    *", nomeCidade1);
+      }else if(somaAtributos1 == somaAtributos2 )
+            {
+      printf("\n*              Houve empate na Partida!!                    *");
+
+
+             }else {
+                     printf("\n*\t Carta 2 - Cidade:  %s Venceu a Partida!!\t    *", nomeCidade2);
+
+                   }
+
+      printf("\n*                                                           *");
+      printf("\n*************************************************************");
 */
 
     return 0;
