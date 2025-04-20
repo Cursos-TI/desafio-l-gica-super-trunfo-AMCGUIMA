@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
+// Desafio Super Trunfo - Países ---------NIVEL MESTRE
 // Tema 2 - Comparação das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
 // Siga os comentários para implementar cada parte do desafio.
@@ -36,7 +36,7 @@ int main()
     //INICIO DO JOGO - CRIAÇÃO DAS DUAS CARTAS E INSERÇÃO DOS VALORES DOS ATRIBUTOS.
     // TRECHO DO CODIGO RESPONSAVEL POR CAPTURAR VIA TECLADO OS DADOS SOLICITADOS E SALVANDO NOS ATRIBUTOS CRIADOS
 
-    Printf("\tINICIANDO O JOGO ... \n\n");
+    printf("\n\n\n\tINICIANDO O JOGO ... \n\n");
 
      // Coleta de Dados da carta 1 via teclado e função scanf.
 
@@ -157,7 +157,7 @@ int main()
     printf("\n6 - PIB per Capita");
     printf("\n7 - Super Poder");
 
-    printf("\n\n  Atributo 1: ");
+    printf("\n\n  Primeiro Atributo: ");
     
     //TRECHO DO CODIGO ONDE É CAPTURADO A OPÇAO ESCOLHIDA PELO JOGADOR VIA TECLADO
     if(scanf("%d", &atributo1) == 1){
@@ -272,7 +272,7 @@ int main()
 
     //TRECHO DA CAPTURA DA OPÇAO DO MENU 2
 
-    printf("\n\n  Atributo 2: ");
+    printf("\n\n  Segundo Atributo: ");
     
     if(scanf("%d", &atributo2) == 1)
     {
@@ -444,14 +444,14 @@ int main()
             0      0      1   =  V                                1          0         ----------------------------------          0              1           =  V
 
     */
-    if(resultado1 && resultado2 || resultado1 && (somaAtributos1 > somaAtributos2) || resultado2 && (somaAtributos1 > somaAtributos2))
+    if((resultado1 && resultado2) || (resultado1 && (somaAtributos1 > somaAtributos2)) || (resultado2 && (somaAtributos1 > somaAtributos2)))
     {
       
         printf("\n*\t Carta 1 - Cidade:  %s Venceu a Partida!!\t    *", nomeCidade1);// CASO SE A CONDIÇAO FOR VERDADEIRA CARTA 1 VENCEU
 
-    }else if(!resultado1 && !resultado2 || !resultado1 && (somaAtributos1 < somaAtributos2) || !resultado2 && (somaAtributos1 < somaAtributos2))
+    }else if((!resultado1 && !resultado2) || (!resultado1 && (somaAtributos1 < somaAtributos2)) || (!resultado2 && (somaAtributos1 < somaAtributos2)))
             {
-                printf("\n*\t Carta 2 -  %s Venceu a Partida!!\t    *", nomeCidade2);
+                printf("\n*\t Carta 2 - Cidade %s Venceu a Partida!!\t    ", nomeCidade2);
 
             }else {
 
@@ -461,6 +461,6 @@ int main()
 
     printf("\n*                                                           *");
     printf("\n*************************************************************");
-    
+
     return 0;
 }
