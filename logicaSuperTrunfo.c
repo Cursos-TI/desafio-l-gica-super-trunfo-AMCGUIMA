@@ -344,7 +344,7 @@ int main()
     printf("\n\nRESULTADO DO JOGO\n\n");
 
     printf("\t\t        Carta 1 \tCarta 2 \n");
-    printf("                Cidade: %s \t |\t%s  ",nomeCidade1, nomeCidade2); 
+    printf("  \tCidade: %s \t |\t%s  \n",nomeCidade1, nomeCidade2); 
 
     switch (atributo1)//UTILIZADO SWITCH-CASE PARA EXIBIR O ATRIBUTO DE CADA CARTA COM SEUS VALORES DE ACORDO COM A ESCOLHA REALIZADA NO MENU 1
     {
@@ -447,7 +447,7 @@ int main()
     if((resultado1 && resultado2) || (resultado1 && (somaAtributos1 > somaAtributos2)) || (resultado2 && (somaAtributos1 > somaAtributos2)))
     {
       
-        printf("\n*\t Carta 1 - Cidade:  %s Venceu a Partida!!\t    *", nomeCidade1);// CASO SE A CONDIÇAO FOR VERDADEIRA CARTA 1 VENCEU
+        printf("\n*\t Carta 1 - Cidade:  %s Venceu a Partida!!\t    ", nomeCidade1);// CASO SE A CONDIÇAO FOR VERDADEIRA CARTA 1 VENCEU
 
     }else if((!resultado1 && !resultado2) || (!resultado1 && (somaAtributos1 < somaAtributos2)) || (!resultado2 && (somaAtributos1 < somaAtributos2)))
             {
@@ -460,7 +460,7 @@ int main()
                    }
 
     printf("\n*                                                           *");
-    printf("\n*************************************************************");
+    printf("\n*************************************************************\n\n\n\n\n");
 
     return 0;
 }
