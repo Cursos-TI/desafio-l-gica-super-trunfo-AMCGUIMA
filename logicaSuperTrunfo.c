@@ -35,7 +35,7 @@ int main()
 
     //INICIO DO JOGO - CRIAÇÃO DAS DUAS CARTAS E INSERÇÃO DOS VALORES DOS ATRIBUTOS.
     // TRECHO DO CODIGO RESPONSAVEL POR CAPTURAR VIA TECLADO OS DADOS SOLICITADOS E SALVANDO NOS ATRIBUTOS CRIADOS
-/*
+
     Printf("\tINICIANDO O JOGO ... \n\n");
 
      // Coleta de Dados da carta 1 via teclado e função scanf.
@@ -424,7 +424,26 @@ int main()
     printf("\n*************************************************************");
     printf("\n*                                                           *");
 
-    // CONDIÇAO QUE VERIFICA SE A SOMADA DOS ATRIBUTOS DA CARTA 1 É MAIOR DO QUE SOMA DOS ATRIBUTOS DA CARTA 2
+    // CONDIÇAO QUE VERIFICA SE A CARTA 1 GANHOU
+    // TABELA DA VERDADE PARA ESSA CONDIÇAO SER VERDADEIRA
+    /* 
+            A  ||  B  ||  C   --------->CONDICOES 
+            1      -      -   =  V
+            0      1      0   =  V
+            0      0      1   =  V  
+
+    */
+
+    // CONDIÇAO QUE VERIFICA SE A CARTA 2 GANHOU
+    // VERIFICADO QUE A CONDICAO ESTA VERIFICADO SE A VARIAVEL resultado1 é 0 utilizando o inversor ! seguido da variavel
+    // TABELA DA VERDADE PARA ESSA CONDIÇAO SER VERDADEIRA
+    /* 
+            A  ||  B  ||  C   --------->CONDICOES            A(!resul1 && !result2)  ||  B(!result1 && (soma1 < soma2)) || C((!result2 && (soma1 < soma2)))
+            1      -      -   =  V                                0          0         --------------------------------------------------------------------   =  V
+            0      1      0   =  V                                0          1                 0               1         ----------------------------------   =  V
+            0      0      1   =  V                                1          0         ----------------------------------          0              1           =  V
+
+    */
     if(resultado1 && resultado2 || resultado1 && (somaAtributos1 > somaAtributos2) || resultado2 && (somaAtributos1 > somaAtributos2))
     {
       
@@ -442,34 +461,6 @@ int main()
 
     printf("\n*                                                           *");
     printf("\n*************************************************************");
-*/
-
-somaAtributos1 = 2;
-somaAtributos2 = 2;
-resultado1 = 1;
-resultado2 = 0;
-
-if(resultado1 && resultado2 || resultado1 && (somaAtributos1 > somaAtributos2) || resultado2 && (somaAtributos1 > somaAtributos2))
-{   
-    printf("CARTA 1 VENCEU\n\n\n");
-
-}else if(!resultado1 && !resultado2 || !resultado1 && (somaAtributos1 < somaAtributos2) || !resultado2 && (somaAtributos1 < somaAtributos2))
-      {
-        printf(" CARTA 2 VENCEU \n\n");
-
-      }else printf("HOUVE EMPATES\n\n");
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     return 0;
 }
